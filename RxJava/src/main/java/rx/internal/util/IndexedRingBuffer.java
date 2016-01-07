@@ -290,7 +290,7 @@ public final class IndexedRingBuffer<E> implements Subscription {
         releaseToPool();
     }
 
-    IndexedRingBuffer() {
+    private IndexedRingBuffer() {
     }
 
     /**
@@ -483,11 +483,8 @@ public final class IndexedRingBuffer<E> implements Subscription {
     }
 
     private static class ElementSection<E> {
-        final AtomicReferenceArray<E> array = new AtomicReferenceArray<E>(SIZE);
-        final AtomicReference<ElementSection<E>> next = new AtomicReference<ElementSection<E>>();
-
-        ElementSection() {
-        }
+        private final AtomicReferenceArray<E> array = new AtomicReferenceArray<E>(SIZE);
+        private final AtomicReference<ElementSection<E>> next = new AtomicReference<ElementSection<E>>();
 
         ElementSection<E> getNext() {
             if (next.get() != null) {
@@ -508,9 +505,6 @@ public final class IndexedRingBuffer<E> implements Subscription {
     private static class IndexSection {
 
         private final AtomicIntegerArray unsafeArray = new AtomicIntegerArray(SIZE);
-
-        IndexSection() {
-        }
 
         public int getAndSet(int expected, int newValue) {
             return unsafeArray.getAndSet(expected, newValue);

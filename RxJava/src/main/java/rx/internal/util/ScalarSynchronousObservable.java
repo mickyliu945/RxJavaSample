@@ -29,7 +29,7 @@ public final class ScalarSynchronousObservable<T> extends Observable<T> {
         return new ScalarSynchronousObservable<T>(t);
     }
 
-    final T t;
+    private final T t;
 
     protected ScalarSynchronousObservable(final T t) {
         super(new OnSubscribe<T>() {
@@ -103,7 +103,7 @@ public final class ScalarSynchronousObservable<T> extends Observable<T> {
         private final Subscriber<? super T> subscriber;
         private final T value;
 
-        ScalarSynchronousAction(Subscriber<? super T> subscriber,
+        private ScalarSynchronousAction(Subscriber<? super T> subscriber,
                 T value) {
             this.subscriber = subscriber;
             this.value = value;

@@ -44,7 +44,7 @@ import rx.internal.util.unsafe.*;
 public final class OperatorScan<R, T> implements Operator<R, T> {
 
     private final Func0<R> initialValueFactory;
-    final Func2<R, ? super T, R> accumulator;
+    private final Func2<R, ? super T, R> accumulator;
     // sentinel if we don't receive an initial value
     private static final Object NO_INITIAL_VALUE = new Object();
 

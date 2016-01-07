@@ -38,13 +38,13 @@ import rx.subscriptions.Subscriptions;
 public final class OnSubscribeRefCount<T> implements OnSubscribe<T> {
 
     private final ConnectableObservable<? extends T> source;
-    volatile CompositeSubscription baseSubscription = new CompositeSubscription();
-    final AtomicInteger subscriptionCount = new AtomicInteger(0);
+    private volatile CompositeSubscription baseSubscription = new CompositeSubscription();
+    private final AtomicInteger subscriptionCount = new AtomicInteger(0);
 
     /**
      * Use this lock for every subscription and disconnect action.
      */
-    final ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock();
 
     /**
      * Constructor.

@@ -46,7 +46,7 @@ public final class OnSubscribeRange implements OnSubscribe<Integer> {
         private final int end;
         private long index;
 
-        RangeProducer(Subscriber<? super Integer> o, int start, int end) {
+        private RangeProducer(Subscriber<? super Integer> o, int start, int end) {
             this.o = o;
             this.index = start;
             this.end = end;

@@ -41,7 +41,7 @@ public final class OnSubscribeToObservableFuture {
     }
 
     /* package accessible for unit tests */static class ToObservableFuture<T> implements OnSubscribe<T> {
-        final Future<? extends T> that;
+        private final Future<? extends T> that;
         private final long time;
         private final TimeUnit unit;
 

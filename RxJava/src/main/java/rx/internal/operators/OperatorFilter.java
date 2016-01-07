@@ -27,7 +27,7 @@ import rx.functions.Func1;
  */
 public final class OperatorFilter<T> implements Operator<T, T> {
 
-    final Func1<? super T, Boolean> predicate;
+    private final Func1<? super T, Boolean> predicate;
 
     public OperatorFilter(Func1<? super T, Boolean> predicate) {
         this.predicate = predicate;

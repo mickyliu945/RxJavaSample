@@ -24,7 +24,7 @@ import rx.Subscriber;
  */
 public class OperatorCast<T, R> implements Operator<R, T> {
 
-    final Class<R> castClass;
+    private final Class<R> castClass;
 
     public OperatorCast(Class<R> castClass) {
         this.castClass = castClass;

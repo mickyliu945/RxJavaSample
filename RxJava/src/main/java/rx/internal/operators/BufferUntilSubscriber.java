@@ -187,7 +187,7 @@ public final class BufferUntilSubscriber<T> extends Subject<T, T> {
     }
 
     @SuppressWarnings("rawtypes")
-    final static Observer EMPTY_OBSERVER = new Observer() {
+    private final static Observer EMPTY_OBSERVER = new Observer() {
 
         @Override
         public void onCompleted() {

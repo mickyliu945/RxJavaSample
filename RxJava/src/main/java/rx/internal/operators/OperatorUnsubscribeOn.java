@@ -27,7 +27,7 @@ import rx.subscriptions.Subscriptions;
  */
 public class OperatorUnsubscribeOn<T> implements Operator<T, T> {
 
-    final Scheduler scheduler;
+    private final Scheduler scheduler;
 
     public OperatorUnsubscribeOn(Scheduler scheduler) {
         this.scheduler = scheduler;

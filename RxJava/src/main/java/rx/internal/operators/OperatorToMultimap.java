@@ -58,10 +58,10 @@ public final class OperatorToMultimap<T, K, V> implements Operator<Map<K, Collec
         }
     }
 
-    final Func1<? super T, ? extends K> keySelector;
-    final Func1<? super T, ? extends V> valueSelector;
+    private final Func1<? super T, ? extends K> keySelector;
+    private final Func1<? super T, ? extends V> valueSelector;
     private final Func0<? extends Map<K, Collection<V>>> mapFactory;
-    final Func1<? super K, ? extends Collection<V>> collectionFactory;
+    private final Func1<? super K, ? extends Collection<V>> collectionFactory;
 
     /**
      * ToMultimap with key selector, custom value selector,

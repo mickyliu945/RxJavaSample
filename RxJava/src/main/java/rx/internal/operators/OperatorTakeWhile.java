@@ -28,7 +28,7 @@ import rx.functions.*;
  */
 public final class OperatorTakeWhile<T> implements Operator<T, T> {
 
-    final Func2<? super T, ? super Integer, Boolean> predicate;
+    private final Func2<? super T, ? super Integer, Boolean> predicate;
 
     public OperatorTakeWhile(final Func1<? super T, Boolean> underlying) {
         this(new Func2<T, Integer, Boolean>() {

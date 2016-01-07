@@ -26,7 +26,7 @@ import rx.Subscriber;
  */
 public class OperatorSkipLast<T> implements Operator<T, T> {
 
-    final int count;
+    private final int count;
 
     public OperatorSkipLast(int count) {
         if (count < 0) {
