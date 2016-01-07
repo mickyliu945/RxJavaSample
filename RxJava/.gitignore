@@ -55,10 +55,6 @@ out
 atlassian-ide-plugin.xml
 
 # Eclipse specific files/directories
-.classpath
-.project
-.settings
-.metadata
 bin/
 
 # NetBeans specific files/directories
